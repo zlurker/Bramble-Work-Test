@@ -7,16 +7,12 @@ public class TreePopulators : MonoBehaviour {
     public float minSize;
     public float maxSize;
 
-    public bool spawnsOnAnyColliderSide;
-    public bool randomiseRotation;
-    public float determinedSize;
+    private float determinedSize;
 
     // Use this for initialization
     void Start() {
         determinedSize = Random.Range(minSize, maxSize);
-        transform.localScale = new Vector3(determinedSize, determinedSize, determinedSize);
-        if(randomiseRotation)
-            transform.rotation = Random.rotation;
+        transform.localScale = new Vector3(minSize, minSize, minSize);
     }
 
     // Update is called once per frame

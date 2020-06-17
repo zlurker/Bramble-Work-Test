@@ -21,7 +21,6 @@ public class MainTree : MonoBehaviour {
 
         // Stops any growth the moment its after 3 mins.
         if(gameplayTime < Time.time) {
-            Debug.Log("Tree growth stop.");
             return;
         }
 
@@ -44,10 +43,21 @@ public class MainTree : MonoBehaviour {
             // Get random placement within top 50% of branch
             float branchY = Random.Range(transform.localScale.y / 2, transform.localScale.y);
             Vector3 randomBranchPlacement = new Vector3(0, branchY, 0);
-            Branch bInst = Instantiate(branch, randomBranchPlacement, Random.rotation);
+            Branch bInst = Instantiate(branch, randomBranchPlacement, Random.rotation);         
+            bInst.transform.Translate(new Vector3(0, 0, 0));
             bInst.SetGrowthLimit(Random.Range(0, branchY));
-            bInst.gameObject.SetActive(true);
+            bInst.gameObject.SetActive(true);           
             branchCreated.Add(bInst);
         }
+    }
+
+    public void GrowPopulator(int item) {
+        // Gets a random branch
+        if(branchCreated.Count == 0)
+            return;
+
+        int index = Random.Range(0, branchCreated.Count);
+        branchCreated[index].PopulateButtonClicked(item);
+
     }
 }
