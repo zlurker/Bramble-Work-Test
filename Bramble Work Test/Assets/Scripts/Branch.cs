@@ -41,7 +41,6 @@ public class Branch : MonoBehaviour {
         //Vector3 randPoint = GetRandomPositionOnBranch();
 
         //Gets a random point within collider
-        Debug.Log(branchCollider.bounds.extents);
         float randomZ = Random.Range(0, transform.localScale.z);
 
         Vector3 forwardDir = transform.position + transform.TransformDirection(0, 0, randomZ);
