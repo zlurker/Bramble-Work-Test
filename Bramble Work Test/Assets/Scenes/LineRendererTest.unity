@@ -237,8 +237,8 @@ MonoBehaviour:
   pos:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 20, z: 0}
-  minRateOfGrowth: 0.01
-  maxRateOfGrowth: 0.1
+  minRateOfGrowth: 1
+  maxRateOfGrowth: 2
   minGrowth: 10
   maxGrowth: 40
   currGrowth: 0
@@ -433,13 +433,13 @@ MonoBehaviour:
   pos:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 20, z: 0}
-  minRateOfGrowth: 0.01
-  maxRateOfGrowth: 0.1
+  minRateOfGrowth: 1
+  maxRateOfGrowth: 2
   minGrowth: 10
   maxGrowth: 40
   currGrowth: 0
-  minBranching: 2
-  maxBranching: 4
+  minBranching: 50
+  maxBranching: 75
   growthLen: 20
 --- !u!4 &1375475273
 Transform:
@@ -546,3 +546,45 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
+--- !u!1 &2018933228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018933230}
+  - component: {fileID: 2018933229}
+  m_Layer: 0
+  m_Name: Optimizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2018933229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018933228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0021808955c4814eb927aa98edc4895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maximumRenders: 25
+  toBeRendered: []
+--- !u!4 &2018933230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018933228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.011902, y: 61.74926, z: 24.841026}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

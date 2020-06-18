@@ -44,17 +44,19 @@ public class LineRendererTest : MonoBehaviour {
 
             for (int i=0; i < randomBranches; i++) {
                 LineRendererTest lInst = Instantiate(clone);
+                lInst.clone = clone;
                 Vector3 nextRandomPt = new Vector3(Random.Range(-0.75f, 0.75f), Random.Range(0f,1f),0);
                 lInst.SetPos(new Vector3[] { pos[1], pos[1] + nextRandomPt });
-                lInst.gameObject.SetActive(true);
+                RendererOptimisers.inst.AddRenderer(lInst);               
             }
 
+            RendererOptimisers.inst.EndRender();
             enabled = false;
             return;
         }
 
         currGrowth += Random.Range(minRateOfGrowth, maxRateOfGrowth);// rateOfGrowth;
-        Debug.Log(currGrowth);
+        //Debug.Log(currGrowth);
         pos[1] = pos[0] + (normalised * currGrowth);
         SetLRPos();     
     }
