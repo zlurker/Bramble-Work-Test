@@ -226,7 +226,7 @@ Transform:
   m_GameObject: {fileID: 40250710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 739373338}
   m_RootOrder: 0
@@ -574,13 +574,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0.12094134, y: -0, z: -0, w: 0.9926597}
-  m_LocalPosition: {x: 0, y: 2.96, z: -8.27}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.893001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544349197
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &739373337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,26 +825,27 @@ MonoBehaviour:
   - {fileID: 544349199}
   - {fileID: 1278862007}
   - {fileID: 1933292657}
-  - {fileID: 1042157860}
+  - {fileID: 67972367}
   autoSpawnedPopulators:
   - {fileID: 1042157860}
   autoSpawnGrowthChance: 0.2
   branchCollider: {fileID: 40250712}
   growthLimitScaleFactorAuto: 20
+  growthLimit: 20
 --- !u!4 &739373338
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 739373336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.34696928, y: -0, z: -0, w: 0.93787646}
   m_LocalPosition: {x: 0, y: 0.52, z: 5.368}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 40250711}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -40.604, y: 0, z: 0}
 --- !u!1 &823841859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,5 +2235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   branch: {fileID: 739373337}
-  branchGrowChance: 0.009
+  branchGrowChance: 0.05
   minStumpLenBeforeGrowth: 2.5
+  camera: {fileID: 534669905}

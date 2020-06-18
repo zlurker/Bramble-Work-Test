@@ -9,6 +9,7 @@ public class MainTree : MonoBehaviour {
     public Branch branch;
     public float branchGrowChance = 0.009f;
     public float minStumpLenBeforeGrowth = 10;
+    public Transform camera;
     private List<Branch> branchCreated;
     // Use this for initialization
 
@@ -35,6 +36,10 @@ public class MainTree : MonoBehaviour {
         Vector3 currentScale = transform.localScale;
         currentScale.y += Random.value / 100;
         transform.localScale = currentScale;
+
+        Vector3 camPos = camera.transform.position;
+        camPos.y = currentScale.y;
+        camera.position = camPos;
     }
 
     void GrowBranches() {
@@ -46,7 +51,7 @@ public class MainTree : MonoBehaviour {
             Branch bInst = Instantiate(branch, randomBranchPlacement, Random.rotation);         
             bInst.transform.Translate(new Vector3(0, 0, 0));
             bInst.SetGrowthLimit(Random.Range(0, branchY));
-            bInst.gameObject.SetActive(true);           
+            bInst.gameObject.SetActive(true);            
             branchCreated.Add(bInst);
         }
     }
